@@ -1,0 +1,87 @@
+{
+  "name": "sdudziak/symony3-angular2-seed",
+  "description": "This is seed project",
+  "license": "proprietary",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    },
+    "files": [
+      "app/AppKernel.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=5.6.0",
+    "symfony/symfony": "^3.0",
+    "doctrine/orm": "^2.5",
+    "doctrine/doctrine-bundle": "^1.6",
+    "symfony/assetic-bundle": "^2.7",
+    "symfony/monolog-bundle": "^2.8",
+    "symfony/security-bundle": "^3.0",
+    "symfony/swiftmailer-bundle": "^2.3",
+    "sensio/distribution-bundle": "dev-master",
+    "sensio/framework-extra-bundle": "^3.0",
+    "incenteev/composer-parameter-handler": "^2.1",
+    "friendsofsymfony/user-bundle": "dev-master",
+    "friendsofsymfony/rest-bundle": "^1.7.7",
+    "fabpot/goutte": "^3.1",
+    "jms/serializer-bundle": "^1.1",
+    "guzzlehttp/guzzle": "^6.1.1",
+    "behat/mink-extension": "dev-master",
+    "behat/behat": "v3.1.0rc1",
+    "behat/mink-selenium2-driver": "dev-master",
+    "behat/mink": "dev-master",
+    "php-console/php-console": "^3.1",
+    "leafo/lessphp": "^0.5.0",
+    "patchwork/jsqueeze": "^2.0",
+    "symfony/security-acl": "^3.0"
+  },
+  "require-dev": {
+    "sensio/generator-bundle": "^3.0"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "SymfonyStandard\\Composer::hookRootPackageInstall"
+    ],
+    "post-install-cmd": [
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+      "php bin/console security:check"
+    ],
+    "post-update-cmd": [
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+      "php bin/console security:check"
+    ]
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "extra": {
+    "symfony-app-dir": "app",
+    "symfony-web-dir": "web",
+    "symfony-var-dir": "var",
+    "symfony-bin-dir": "bin",
+    "symfony-tests-dir": "tests",
+    "symfony-assets-install": "relative",
+    "incenteev-parameters": {
+      "file": "app/config/parameters.yml"
+    }
+  }
+}

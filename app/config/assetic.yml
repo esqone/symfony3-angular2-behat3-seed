@@ -1,0 +1,13 @@
+assetic:
+    debug:          false # %kernel.debug%
+    use_controller: false
+    read_from:      %kernel.root_dir%/../web
+    write_to:       %kernel.root_dir%/../web
+    bundles:        [] # disable bundles parsing
+
+    filters:
+        cssrewrite: ~
+        yui_js:  { jar: "%kernel.root_dir%/../bin/yuicompressor.jar" }
+        yui_css: { jar: "%kernel.root_dir%/../bin/yuicompressor.jar" }
+
+    assets: ~

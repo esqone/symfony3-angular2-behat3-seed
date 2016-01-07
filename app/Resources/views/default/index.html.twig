@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Seed app welcome too!{% endtrans %}{% endblock %}
+
+{% block head_js %}
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script src="{{ asset('lib/es6-promise.js') }}"></script>
+    <script src="{{ asset('lib/es6-shim.js') }}"></script>
+    <script src="{{ asset('lib/custom-require.js') }}"></script>
+    <script src="{{ asset('lib/system.src.js') }}"></script>
+    <script src="{{ asset('app-config.js') }}"></script>
+    <script src="{{ asset('lib/Reflect.js') }}"></script>
+    <script src="{{ asset('lib/rxjs/Rx.js') }}"></script>
+    <script src="{{ asset('lib/angular2/bundles/angular2.dev.js') }}"></script>
+    <script src="{{ asset('lib/angular2/bundles/http.dev.js') }}"></script>
+    <script src="{{ asset('lib/angular2/bundles/angular2-polyfills.js') }}"></script>
+    <script src="{{ asset('lib/angular2/bundles/router.dev.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <application>Loading...</application>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        System.import('app/boot')
+                .then(null, console.error.bind(console));
+    </script>
+{% endblock %}
